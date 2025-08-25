@@ -30,16 +30,16 @@
   .catalog-item{background:#1a223d; padding:15px; border-radius:10px; text-align:center; cursor:pointer; transition:transform 0.2s;}
   .catalog-item:hover{transform:scale(1.05);}
   .close{float:right; font-size:28px; cursor:pointer; color:#fff;}
-  /* Floating WA buttons */
-  .wa-buttons{position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; z-index:1100;}
-  .wa-buttons a{background:#25D366; color:#fff; font-weight:bold; padding:12px 16px; border-radius:50px; box-shadow:0 4px 8px rgba(0,0,0,0.3); text-decoration:none; font-size:14px; text-align:center;}
+  /* Floating WA button */
+  .wa-buttons{position:fixed; bottom:20px; right:20px; z-index:1100;}
+  .wa-buttons a{background:#25D366; color:#fff; font-weight:bold; padding:12px 16px; border-radius:50px; box-shadow:0 4px 8px rgba(0,0,0,0.3); text-decoration:none; font-size:14px; text-align:center; display:inline-block;}
   .wa-buttons a:hover{transform:scale(1.05);}
 </style>
 </head>
 <body>
 
 <header>
-  <img src="https://g.top4top.io/p_35243e0wx0.png" alt="HDW Logo">
+  <img src="https://files.catbox.moe/ajmwnd.png" alt="HDW Logo">
   <p class="lead">Jasa 3D Printing & Desain profesional dengan sentuhan maksimal</p>
 </header>
 
@@ -68,9 +68,8 @@
     <h3 id="productTitle"></h3>
     <p id="productDesc"></p>
     <p id="productPrice" style="font-weight:bold;"></p>
-    <div style="display:flex; gap:10px; justify-content:center; margin-top:15px;">
-      <a id="waAdmin1" href="#" target="_blank" class="btn">Order ADMIN 1</a>
-      <a id="waAdmin2" href="#" target="_blank" class="btn">Order ADMIN 2</a>
+    <div style="margin-top:15px;">
+      <a id="waQuestion" href="#" target="_blank" class="btn">💬 Ajukan Pertanyaan</a>
     </div>
   </div>
 </div>
@@ -81,8 +80,7 @@
 
 <!-- Floating WA -->
 <div class="wa-buttons">
-  <a href="https://wa.me/6281390998230?text=Halo%20ADMIN%201" target="_blank">💬 ADMIN 1</a>
-  <a href="https://wa.me/6285198536619?text=Halo%20ADMIN%202" target="_blank">💬 ADMIN 2</a>
+  <a href="https://wa.me/6281390998230?text=Halo%2C%20saya%20ingin%20ajukan%20pertanyaan" target="_blank">💬 Ajukan Pertanyaan</a>
 </div>
 
 <script>
@@ -120,8 +118,7 @@ function openProduct(p){
   document.getElementById('productDesc').innerText=p.desc;
   document.getElementById('productPrice').innerText=p.price||'';
   document.getElementById('productImg').src=p.img;
-  document.getElementById('waAdmin1').href=`https://wa.me/6281390998230?text=${encodeURIComponent('Order '+p.title)}`;
-  document.getElementById('waAdmin2').href=`https://wa.me/6285198536619?text=${encodeURIComponent('Order '+p.title)}`;
+  document.getElementById('waQuestion').href=`https://wa.me/6281390998230?text=${encodeURIComponent('Halo, saya ingin tanya tentang '+p.title)}`;
   document.getElementById('categoryModal').classList.remove('show');
   document.getElementById('productModal').classList.add('show');
 }
